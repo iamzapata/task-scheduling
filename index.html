@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Event Loop</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="BoxContainer">
+        <h1><code>requestAnimationFrame(callback)</code></h1>
+        <div>
+          The number of callbacks is usually 60 times per second, but will
+          generally match the display refresh rate in most web browsers as per
+          W3C recommendation.
+        </div>
+        <div class="Box" id="RAF-box"></div>
+      </div>
+
+      <div class="BoxContainer">
+        <h1><code>requestIdleCallback(callback)</code></h1>
+
+        <div>YOLO</div>
+
+        <div class="Box" id="RIC-box"></div>
+      </div>
+
+      <div class="BoxContainer">
+        <h1><code>setTimeout(callback, 0)</code></h1>
+        <div>
+          Since the callbacks are queued and executed "as soon as possible", thu
+          number of callbacks is a lot more than the 60~ times per second
+          'requestAnimationFrame' has.
+        </div>
+
+        <div class="Box" id="STO-box"></div>
+      </div>
+
+      <div class="BoxContainer">
+        <h1><code>queueMicrotask(callback)</code></h1>
+
+        <div>
+          Executing 'queueMicrotask' to animate the box freezes the browser.
+        </div>
+
+        <div class="Box" id="QMT-box">
+          <abbr
+            title="Clicking on this box kicks off the element motion using 'queueMicrotask', which can freeze your browser window."
+          >
+            ?
+          </abbr>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
