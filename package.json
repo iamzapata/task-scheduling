@@ -1,18 +1,21 @@
 {
   "name": "event-loop",
-  "private": false,
   "version": "0.0.0",
   "type": "module",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "postinstall": "yarn outdated",
+    "postinstall": "yarn outdated || true",
     "prose:readme": "vale README.md"
   },
   "devDependencies": {
     "prettier": "^2.7.1",
     "typescript": "^4.6.4",
-    "vite": "^3.0.0"
+    "vite": "3.0.2"
+  },
+  "dependencies": {
+    "vitest": "^0.18.1"
   }
 }
