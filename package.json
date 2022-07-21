@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "postinstall": "yarn outdated || true",
+    "postinstall": "yarn outdated --no-error-on-outdated",
     "prose:readme": "vale README.md"
   },
   "devDependencies": {
